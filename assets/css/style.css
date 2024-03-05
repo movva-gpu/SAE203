@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.mono {
+    font-style: normal;
+    font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+    font-weight: 600;
+}
+
+header {
+    display: grid;
+    place-items: center;
+    width: calc(100% - 2 * 2em);
+    padding: 2rem;
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 92px;
+        width: 80%;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1.33rem;
+
+        .logo-wrapper {
+            /*width: 100%;*/
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            font-size: 1.33rem;
+            color: black;
+            text-decoration: none;
+            transition: opacity ease .67s;
+
+            &:has(svg) {
+                display: flex;
+                margin: 0 auto;
+                justify-content: center;
+                align-items: center;
+                gap: 1.33rem;
+
+                .text-wrapper {
+                    display: inline-block;
+                }
+
+                h2 {
+                    display: block;
+                    background: white;
+                    translate: 0 33%;
+                    margin: 0;
+                    transition: translate ease .67s;
+                }
+
+                .scp {
+                    display: flex;
+                    gap: .5ch;
+                    left: 0;
+                    min-width: max-content;
+                    
+                    span {
+                        display: block;
+                        translate: 0 -100%;
+                        z-index: -1;
+                    }
+
+                    .sec {
+                        transition: translate ease .67s .1s;
+                    }
+                    .cont {
+                        transition: translate ease .67s .2s;
+                    }
+                    .pro {
+                        transition: translate ease .67s .3s;
+                    }
+                }
+
+                &:hover {
+                    h2 {
+                        translate: 0 0;
+                    }
+
+                    span {
+                        span {
+                            translate: 0 0;
+                        }
+                    }
+                }
+
+                svg {
+                    display: inline-block;
+                    width: 92px;
+                    height: 92px;
+                }
+            }
+
+
+            &.inactive, &.inactive::after {
+                opacity: 65%;
+            }
+
+            &:is(.active, :hover), &:is(.active, :hover)::after {
+                opacity: 100%;
+            }
+
+            &:not(:has(svg))::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -.17rem;
+                left: 50%;
+                translate: -50% 0;
+                width: 0;
+                height: .17rem;
+                border-radius: 100vw;
+                transition: ease .67s;
+                background-color: black;
+            }
+
+            &:hover::after {
+                width: calc(100% + 15px);
+            }
+        }
+    }
+}
+
+main {
+    min-height: 68.9svh;
+
+    h1 {
+        text-align: center;
+    }
+
+    .scp-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, calc(600px - 4rem));
+        justify-content: center;
+        gap: 4rem;
+        width: calc(100% - 2 * 4rem);
+        margin: 4em;
+
+        .scp-cont {
+            .img-wrapper {
+                --_img-border: solid 1px #666;
+                border: var( --_img-border, solid 1px #666);
+                width: 100%;
+
+                img {
+                    display: block;
+                    max-width: 100%;
+                }
+
+                legend {
+                    display: block;
+                    padding: .33rem;
+                    text-align: center;
+                    font-weight: bold;
+                    background-color: #eee;
+                    border-top: var( --_img-border, solid 1px #666);
+                }
+            }
+
+            .bold {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+footer {
+    width: calc(100% - 1rem * 2);
+    text-align: center;
+    padding: 1rem;
+    font-size: larger;
+
+    a {
+        color: black;
+        font-weight: 600;
+        font-style: italic;
+    }
+}

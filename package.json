@@ -1,0 +1,28 @@
+{
+  "name": "sae203",
+  "version": "1.0.0",
+  "description": "Website with my SQL project at the IUT of Troyes.",
+  "main": "/asstes/js/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movva-gpu/SAE203.git"
+  },
+  "keywords": [
+    "sae",
+    "iut",
+    "troyes",
+    "npm",
+    "js",
+    "css",
+    "php",
+    "oop",
+    "sql",
+    "mysql"
+  ],
+  "author": "Danyella Strikann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/movva-gpu/SAE203/issues"
+  },
+  "homepage": "https://github.com/movva-gpu/SAE203#readme"
+}

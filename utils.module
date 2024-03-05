@@ -1,0 +1,7 @@
+<?php
+function importHeader($title = 'Titre vide')
+{
+    require 'components/head.inc';
+    echo '<title>' . $title . '</title>';
+    require 'components/header.inc';
+}
