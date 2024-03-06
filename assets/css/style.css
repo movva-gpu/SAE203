@@ -161,6 +161,7 @@ main {
                     font-weight: bold;
                     background-color: #eee;
                     border-top: var( --_img-border, solid 1px #666);
+                    border-radius: 0 0 .2rem .2rem;
                 }
             }
 
