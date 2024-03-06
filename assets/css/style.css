@@ -50,8 +50,8 @@ header {
                 h2 {
                     display: block;
                     background: white;
+                    box-shadow: 0 0 5px 5px white;
                     translate: 0 33%;
-                    margin: 0;
                     transition: translate ease .67s;
                 }
 
@@ -63,7 +63,7 @@ header {
                     
                     span {
                         display: block;
-                        translate: 0 -100%;
+                        translate: 0 -150%;
                         z-index: -1;
                     }
 
@@ -85,7 +85,7 @@ header {
 
                     span {
                         span {
-                            translate: 0 0;
+                            translate: 0 -80%;
                         }
                     }
                 }
@@ -146,6 +146,7 @@ main {
             .img-wrapper {
                 --_img-border: solid 1px #666;
                 border: var( --_img-border, solid 1px #666);
+                border-radius: .2rem;
                 width: 100%;
 
                 img {
@@ -167,6 +168,50 @@ main {
                 font-weight: bold;
             }
         }
+    }
+
+    form {
+        display: grid;
+        width: 50%;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 2.5lh);
+        grid-template-areas:
+            'lbl lbl'
+            'ipt ipt'
+            'btn1 btn2';
+        place-items: center;
+
+        label {
+            grid-area: lbl;
+        }
+
+        input {
+            width: calc(90% - .1em * 2);
+            height: 60%;
+            grid-area: ipt;
+            padding: .1em;
+            border: solid #666 1px;
+            border-radius: .2rem;
+        }
+
+        button.btn {
+            cursor: pointer;
+            width: 80%;
+            height: 80%;
+            padding: calc(.1em + 2 * 5px);
+            font-size: 1rem;
+            background-color: white;
+            border: solid #666 1px;
+            border-radius: .2rem;
+            transition: box-shadow ease .33s, translate ease .33s;
+
+            &:hover {
+                translate: -5px -5px;
+                box-shadow: 5px 5px #666;
+            }
+        }
+
     }
 }
 
