@@ -1,5 +1,9 @@
 <?php
 
+if (empty($_POST['author_name'])) {
+    header('Location: /form_recherche.php?err=empty');
+}
+
 use class\SCP;
 
 require 'utils.module';
@@ -26,10 +30,12 @@ $test_ipsum = new SCP(2, 'SCP-Ispum', 'Lorem Ipsum', 'Sûr, Ipsum',
     Sint iure ipsum, consequatur voluptate est dicta odio voluptates. Aliquam amet accusamus sint natus,
     eveniet accusantium exercitationem fuga qui hic eius quia porro quod asperiores cum
     veritatis soluta reiciendis aperiam.', 0, 0);
+
+$author = htmlspecialchars($_POST['author_name'], ENT_QUOTES);
 ?>
 
 <main>
-    <h1>Résultats de la recherche</h1>
+    <h1>Résultats de la recherche : <em class="search"><?= $author ?></em></h1>
     <div class="scp-wrapper">
         <?= $test_ipsum->getDiv() ?>
         <?= $test_ipsum->getDiv() ?>

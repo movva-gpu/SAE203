@@ -1,9 +1,11 @@
 <?php
 
-use class\SCP;
 
 require 'utils.module';
+
 require 'class/SCP.php';
+
+use class\SCP;
 
 importHeader('SCPs');
 
