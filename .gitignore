@@ -1,2 +1,6 @@
 vendor/
 .idea/
+node_modules/
+build/
+conf/
+!conf/example/
