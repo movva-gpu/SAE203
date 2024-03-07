@@ -17,7 +17,7 @@
     </p>
 </footer>
 
-<?= str_contains($_SERVER['PHP_SELF'], 'form_recherche') ? '<script src="/assets/js/form.js"></script>' : '' ?>
+<script src="/assets/js/main.js"></script>
 
 </body>
 </html>
