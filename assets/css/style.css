@@ -1,6 +1,19 @@
 body {
     margin: 0;
     font-family: system-ui, -apple-system, sans-serif;
+    background: black;
+}
+
+@supports (text-wrap: pretty) {
+    p {
+        text-wrap: pretty !important;
+    }
+}
+
+@supports (text-wrap: balance) {
+    h1, h2, h3, h4, h5, h6, p {
+        text-wrap: balance;
+    }
 }
 
 * {
@@ -13,9 +26,8 @@ body {
     left: -25%;
     width: 150%;
     height: 150%;
-    background-size: cover;
     filter: blur(1rem);
-    background-image: url('/assets/img/back.avif');
+    background: url('/assets/img/back.avif') center / cover black;
     z-index: -10;
 }
 
