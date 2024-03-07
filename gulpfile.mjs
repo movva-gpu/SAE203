@@ -28,7 +28,11 @@ const uglify = composer(uglifyEs, console)
 task('cleanBuild', (cb) => {
     try {
         fs.accessSync(import.meta.dirname + '/build')
-        fs.rmSync(import.meta.dirname + '/build/', {recursive: true, force: true});
+        fs.rmSync(import.meta.dirname + '/build/', {
+            recursive: true,
+            force: true
+        });
+
         cb()
     } catch (e) {
         cb(e)
@@ -41,24 +45,40 @@ task('minifyCSS', () => {
         postcssNested(),
         cssnano()
     ]
-    return src('assets/css/*.css', '!*.min.css')
+    return src([
+        'assets/css/*.css',
+        '!*.min.css'
+    ])
         .pipe(postcss(plugins))
         .pipe(header('/* minified */\n'))
         .pipe(dest('build/assets/css'));
 });
 
 task('minifyPHP', () => {
-    return src(['**/*.php', '**/*.inc', '**/*.module', '!node_modules/**/*', '!vendor/**/*'])
+    return src([
+        '**/*.php',
+        '**/*.inc',
+        '**/*.module',
+        '!node_modules/**/*',
+        '!vendor/**/*'
+    ])
         .pipe(phpMinifier({mode: 'safe', binary: '/mnt/c/php-8.3.2/php.exe', silent: false}))
         .pipe(replace('    ', ''))
         .pipe(replace('   ', ''))
         .pipe(replace('  ', ''))
         .pipe(replace(/\r|\n/g, ''))
+        .pipe(replace('<?php', '<?php '))
+        .pipe(replace('<?=', '<?= '))
+        .pipe(replace('?>', ' ?>'))
         .pipe(dest('build/'));
 });
 
 task('minifyJS', () => {
-    return src(['assets/js/*.js', '!*.min.js', '!node_modules/**/*'])
+    return src([
+        'assets/js/*.js',
+        '!*.min.js',
+        '!node_modules/**/*'
+    ])
         .pipe(babel({
             presets: ['@babel/env']
         }))
@@ -83,8 +103,13 @@ task('copyImages', () => {
         .pipe(dest('build/assets/img/'));
 });
 
+task('copyFavicon', () => {
+    return src('favicon.ico')
+        .pipe(dest('build/'));
+});
+
 task('upload', (cb) => {
-    const command = 'sshpass -p' + atob(conf.passwd) + ' scp -r build/ ' + conf.dest;
+    const command = 'sshpass -p ' + atob(conf.passwd) + ' scp -r build/* ' + conf.dest;
     exec(command, (error, stdout, stderr) => {
         console.log(stdout)
         console.log(stderr)
@@ -92,4 +117,4 @@ task('upload', (cb) => {
     });
 });
 
-task('default', series('cleanBuild', parallel('minifyCSS', 'minifyJS', 'minifyPHP', 'copyImages'), 'upload'));
+task('default', series('cleanBuild', parallel('minifyCSS', 'minifyJS', 'minifyPHP', 'copyImages', 'copyFavicon'), 'upload'));
