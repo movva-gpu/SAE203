@@ -85,7 +85,7 @@ task('copyImages', () => {
 
 task('upload', (cb) => {
     const command = 'sshpass -p' + atob(conf.passwd) + ' scp -r build/ ' + conf.dest;
-    const child = exec(command, (error, stdout, stderr) => {
+    exec(command, (error, stdout, stderr) => {
         console.log(stdout)
         console.log(stderr)
         cb(error);
