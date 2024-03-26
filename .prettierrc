@@ -1,0 +1,25 @@
+tabWidth: 4
+useTabs: false
+singleQuote: true
+trailingComma: 'none'
+semi: true
+arrowParens: 'avoid'
+endOfLine: 'lf'
+printWidth: 100
+proseWrap: 'preserve'
+singleAttributePerLine: false
+bracketSameLine: true
+bracketSpacing: true
+plugins:
+  - '@prettier/plugin-php'
+  - '@prettier/plugin-xml'
+  - 'prettier-plugin-sql'
+overrides:
+  - files:
+      - '*.json'
+      - '*.jsonc'
+      - '.prettierrc'
+      - '*.yml'
+      - '*.yaml'
+    options:
+      tabWidth: 2

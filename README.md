@@ -25,7 +25,7 @@ Pour ce projet, nous devons réaliser individuellement un site présentant les d
 contrairement à la [SA&Eacute;105](https://github.com/movva-gpu/SAE105), doivent être stockées dans une base de donnés
 MySQL pour être manipulable bien plus facilement qu'en JSON.
 
-Il doit aussi avoir un "*back office*" permettant à un éventuel admin de gérer les données facilement sans avoir à
+Il doit aussi avoir un "_back office_" permettant à un éventuel admin de gérer les données facilement sans avoir à
 utiliser PhpMyAdmin ou le shell.
 
 Enfin, la base de données doit contenir deux tables reliées entre elles.
@@ -38,13 +38,13 @@ Celles-ci doivent avoir au moins six (6) champs (sans compter l'ID) dans l'une, 
 Le site est hébergé sur un VPS à l'adresse <http://mmi23f23.sae203.ovh>, sous un nom de domaine géré par
 l'établissement.
 
-Le server web utilisé est [The Apache HTTP Server Project](https://httpd.apache.org/), alias *httpd*.
+Le server web utilisé est [The Apache HTTP Server Project](https://httpd.apache.org/), alias _httpd_.
 
 La configuration du site est disponible dans le dossier apache/.
 
 ## Déploiement
 
-Pour build et *compiler* le site sur mon VPS, j'utilise [gulp](https://gulpjs.com/) afin de minifier mon CSS
+Pour build et _compiler_ le site sur mon VPS, j'utilise [gulp](https://gulpjs.com/) afin de minifier mon CSS
 avec [cssnano](https://cssnano.github.io/cssnano/), mon JS avec [UglifyJS](https://lisperator.net/uglifyjs/) (⚠️
 Attention aux astigmates et aux épileptiques photosensibles, le site d'UglifyJS est vieux et pas du tout accessible.
 ⚠️).
@@ -55,7 +55,7 @@ avec [sshpass](https://sourceforge.net/projects/sshpass/) et [scp](https://man.a
 
 Pour déployer vous-même mon projet sur votre propre VPS, suivez les étapes suivantes :
 
-* Vérifiez vos versions respectives de node, npm et npx :
+-   Vérifiez vos versions respectives de node, npm et npx :
 
     ```shell
     node --version
@@ -69,23 +69,23 @@ Pour déployer vous-même mon projet sur votre propre VPS, suivez les étapes su
     npx --version
     ```
 
-  > Si l'un d'entre eux n'est pas installé, suivez les instructions [ici](https://nodejs.org/en).
+    > Si l'un d'entre eux n'est pas installé, suivez les instructions [ici](https://nodejs.org/en).
 
-* Installez le cli de gulp
+-   Installez le cli de gulp
 
     ```shell
     npm install --global gulp-cli
     ```
 
-* Vérifiez si vous avez git d'installé
+-   Vérifiez si vous avez git d'installé
 
     ```shell
     git --version
     ```
 
-  > Sinon, suivez ces instructions [ici](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git).
+    > Sinon, suivez ces instructions [ici](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git).
 
-* Clonez le repo git
+-   Clonez le repo git
 
     ```shell
     git clone https://github.com/movva-gpu/SAE203.git
@@ -95,21 +95,21 @@ Pour déployer vous-même mon projet sur votre propre VPS, suivez les étapes su
     cd SAE203
     ```
 
-* Installez les dépendances du projet
+-   Installez les dépendances du projet
 
     ```shell
     npm install
     ```
 
-* Configurez une base de données MySql puis importez la
+-   Configurez une base de données MySql puis importez la
 
     ```shell
     mysql nomDeLaBase < sql/sae203Base.sql
     ```
 
-* Créez une configuration en suivant l'exemple de conf/example
+-   Créez une configuration en suivant l'exemple de conf/example
 
-* Enfin, déployez le site
+-   Enfin, déployez le site
 
     ```shell
     gulp

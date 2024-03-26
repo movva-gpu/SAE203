@@ -22,5 +22,4 @@ importHeader($title);
         </h2>
     </main>
 
-<?php
-require 'components/footer.inc';
+<?php require 'components/footer.inc';

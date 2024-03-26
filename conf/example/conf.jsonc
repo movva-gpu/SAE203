@@ -1,7 +1,7 @@
 {
-    "dest": "john@john.doe.xyz:path/to/john/doe's/site",
-    // john@127.0.0.2 is valid too ofc
-    "passwd": "base64password"
-    // and yes, those are comments in JSON, again
-    // and yes, it works. Thanks komkom! (https://github.com/komkom)
+  "dest": "john@john.doe.xyz:path/to/john/doe's/site",
+  // john@127.0.0.2 is valid too ofc
+  "passwd": "base64password"
+  // and yes, those are comments in JSON, again
+  // and yes, it works. Thanks komkom! (https://github.com/komkom)
 }

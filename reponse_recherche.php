@@ -11,8 +11,13 @@ require 'class/SCP.php';
 
 importHeader('Résultats de la recherche');
 
-$test_ipsum = new SCP(2, 'SCP-Ispum', 'Lorem Ipsum', 'Sûr, Ipsum',
-    'https://placehold.co/800x600/213/f0f0f0/', 'Lorem Ipsum',
+$test_ipsum = new SCP(
+    2,
+    'SCP-Ispum',
+    'Lorem Ipsum',
+    'Sûr, Ipsum',
+    'https://placehold.co/800x600/213/f0f0f0/',
+    'Lorem Ipsum',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse laboriosam ipsam debitis
     tempora deserunt dolore, similique quibusdam odio! Nam modi voluptatibus similique dolorum, asperiores quasi
     inventore odio et nesciunt. Sed.
@@ -29,7 +34,10 @@ $test_ipsum = new SCP(2, 'SCP-Ispum', 'Lorem Ipsum', 'Sûr, Ipsum',
     veritatis cum animi!
     Sint iure ipsum, consequatur voluptate est dicta odio voluptates. Aliquam amet accusamus sint natus,
     eveniet accusantium exercitationem fuga qui hic eius quia porro quod asperiores cum
-    veritatis soluta reiciendis aperiam.', 0, 0);
+    veritatis soluta reiciendis aperiam.',
+    0,
+    0
+);
 
 $author = htmlspecialchars($_POST['author_name'], ENT_QUOTES);
 ?>

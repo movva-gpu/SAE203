@@ -1,6 +1,5 @@
 <?php
 
-
 require 'utils.module';
 
 require 'class/SCP.php';
@@ -9,17 +8,32 @@ use class\SCP;
 
 importHeader('SCPs');
 
-$test_1 = new SCP(0, 'SCP-500', 'La Panacée', 'Sûr', '500.avif', 'Des pilules de SCP-500.',
-    'SCP-2151-A et SCP-2151-B doivent être gardés séparément l\'un de l\'autre dans des casiers de confinement de 
+$test_1 = new SCP(
+    0,
+    'SCP-500',
+    'La Panacée',
+    'Sûr',
+    '500.avif',
+    'Des pilules de SCP-500.',
+    'SCP-2151-A et SCP-2151-B doivent être gardés séparément l\'un de l\'autre dans des casiers de confinement de
     haute sécurité situés au Site-81. À titre provisoire, les expérimentations sur SCP-2151-A et -B sont suspendues.
     <br><br>
     SCP-2151-1A doit être préservé indéfiniment au Site-81 ou, le cas échéant, jusqu\'à ce que SCP-2151-1A expire.',
-    'SCP-500 doit être stocké dans un endroit frais et sec à l\'abri de la lumière. Seul le personnel ayant au 
-    moins un niveau de sécurité supérieur ou égal à 4 peut avoir accès à SCP-500 afin d\'éviter une 
-    mauvaise utilisation', 0, 0);
+    'SCP-500 doit être stocké dans un endroit frais et sec à l\'abri de la lumière. Seul le personnel ayant au
+    moins un niveau de sécurité supérieur ou égal à 4 peut avoir accès à SCP-500 afin d\'éviter une
+    mauvaise utilisation',
+    0,
+    0
+);
 
-$test_2 = new SCP(1, 'SCP-2151', 'Le Lien qui nous unit', 'Sûr', '2151.avif', 'SCP-2151-A.',
-    'SCP-2151-A et SCP-2151-B doivent être gardés séparément l\'un de l\'autre dans des casiers de confinement de 
+$test_2 = new SCP(
+    1,
+    'SCP-2151',
+    'Le Lien qui nous unit',
+    'Sûr',
+    '2151.avif',
+    'SCP-2151-A.',
+    'SCP-2151-A et SCP-2151-B doivent être gardés séparément l\'un de l\'autre dans des casiers de confinement de
     haute sécurité situés au Site-81. À titre provisoire, les expérimentations sur SCP-2151-A et -B sont suspendues.
     <br><br>
     SCP-2151-1A doit être préservé indéfiniment au Site-81 ou, le cas échéant, jusqu\'à ce que SCP-2151-1A expire.',
@@ -49,10 +63,18 @@ $test_2 = new SCP(1, 'SCP-2151', 'Le Lien qui nous unit', 'Sûr', '2151.avif', '
         <em class="mono">[DONNÉES&nbsp;SUPPRIMÉES]</em>. Alors que les autres
         instances de SCP-2151-1(X) ont expiré rapidement après leur formation, SCP-2151-1A a survécu pendant plus de
         30 ans après sa découverte. Des recherches visant à en comprendre les raisons sont
-        en cours.', 0, 0);
+        en cours.',
+    0,
+    0
+);
 
-$test_ipsum = new SCP(2, 'SCP-Ispum', 'Lorem Ipsum', 'Sûr, Ipsum',
-    'https://placehold.co/800x600/213/f0f0f0/','Lorem Ipsum',
+$test_ipsum = new SCP(
+    2,
+    'SCP-Ispum',
+    'Lorem Ipsum',
+    'Sûr, Ipsum',
+    'https://placehold.co/800x600/213/f0f0f0/',
+    'Lorem Ipsum',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse laboriosam ipsam debitis
     tempora deserunt dolore, similique quibusdam odio! Nam modi voluptatibus similique dolorum, asperiores quasi
     inventore odio et nesciunt. Sed.
@@ -69,8 +91,10 @@ $test_ipsum = new SCP(2, 'SCP-Ispum', 'Lorem Ipsum', 'Sûr, Ipsum',
     veritatis cum animi!
     Sint iure ipsum, consequatur voluptate est dicta odio voluptates. Aliquam amet accusamus sint natus,
     eveniet accusantium exercitationem fuga qui hic eius quia porro quod asperiores cum
-    veritatis soluta reiciendis aperiam.', 0, 0);
-
+    veritatis soluta reiciendis aperiam.',
+    0,
+    0
+);
 ?>
 
 <main>
@@ -97,5 +121,4 @@ $test_ipsum = new SCP(2, 'SCP-Ispum', 'Lorem Ipsum', 'Sûr, Ipsum',
     </div>
 </main>
 
-<?php
-require 'components/footer.inc';
+<?php require 'components/footer.inc';

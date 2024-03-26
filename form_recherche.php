@@ -14,5 +14,4 @@ importHeader('Recherche');
     </form>
 </main>
 
-<?php
-require 'components/footer.inc';
+<?php require 'components/footer.inc';
