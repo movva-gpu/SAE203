@@ -1,19 +1,8 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.19  Distrib 10.3.39-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost
--- Generation Time: Mar 26, 2024 at 07:59 AM
--- Server version: 10.3.39-MariaDB-0+deb10u2
--- PHP Version: 8.2.17
-SET
-    SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-
-START TRANSACTION;
-
-SET
-    time_zone = "+00:00";
-
+-- Host: localhost    Database: sae203Base
+-- ------------------------------------------------------
+-- Server version	10.3.39-MariaDB-0+deb10u2
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -22,15 +11,29 @@ SET
 
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `sae203Base`
---
--- --------------------------------------------------------
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+
+/*!40103 SET TIME_ZONE='+00:00' */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
 --
 -- Table structure for table `scps`
 --
+DROP TABLE IF EXISTS `scps`;
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+
+/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `scps` (
-    `scp_id` tinyint (4) NOT NULL COMMENT 'Identifiant unique de l''entité',
+    `scp_id` tinyint (4) NOT NULL AUTO_INCREMENT COMMENT 'Identifiant unique de l''entité',
     `scp_num` varchar(40) NOT NULL COMMENT 'Numéro de l''entité',
     `scp_name` varchar(150) NOT NULL COMMENT 'Dénomination de l''entité',
     `scp_class` varchar(25) NOT NULL COMMENT 'Classe(s) de l''entité',
@@ -39,25 +42,21 @@ CREATE TABLE `scps` (
     `scp_proc` text DEFAULT NULL COMMENT 'Procédures de confinements spéciales de l''entité',
     `scp_desc` text DEFAULT NULL COMMENT 'Description de l''entité',
     `_author_id` tinyint (4) NOT NULL COMMENT 'Identifiant unique de l''auteur',
-    `_translator_id` tinyint (4) DEFAULT NULL COMMENT 'Identifiant unique du traducteur'
-) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'Liste des SCP';
+    `_translator_id` tinyint (4) DEFAULT NULL COMMENT 'Identifiant unique du traducteur',
+    PRIMARY KEY (`scp_id`)
+) ENGINE = MyISAM AUTO_INCREMENT = 10 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'Liste des SCP';
+
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `scps`
 --
+LOCK TABLES `scps` WRITE;
+
+/*!40000 ALTER TABLE `scps` DISABLE KEYS */;
+
 INSERT INTO
-    `scps` (
-        `scp_id`,
-        `scp_num`,
-        `scp_name`,
-        `scp_class`,
-        `scp_pic`,
-        `scp_alt`,
-        `scp_proc`,
-        `scp_desc`,
-        `_author_id`,
-        `_translator_id`
-    )
+    `scps`
 VALUES
     (
         1,
@@ -93,7 +92,7 @@ VALUES
         'Une liste regroupant en détail les instances de SCP-352-FR sur le Site-Aleph doit être constamment mise à jour et consultable au centre de sécurité interne du site. Un recensement de toutes les instances doit être réalisé au minimum une fois par mois. Les différentes instances doivent être conservées dans une armoire de stockage à proximité du centre de sécurité, surveillée par une caméra.<br>À ce jour, 23 instances de SCP-352-FR sont référencées. Trois d\'entre elles ont été détruites lors de tests post-récupération, les autres sont rangées et disponibles pour d\'éventuels tests.<br><br>Toute modification locale du taux de Normalité au niveau du stockage de SCP-352-FR doit être immédiatement signalée à un chercheur de Niveau 2 attaché au projet.<br><br>Toute famille ayant été en contact avec la Personne d\'Intérêt \"Sélène Aeva\" doit faire l\'objet d\'une perquisition sous couvert d\'une enquête policière. Tout incident présentant un caractère inhabituel compatible avec les effets de SCP-352-FR doit faire l\'objet d\'une enquête pour vérifier l\'origine de ce phénomène. Ces caractères comprennent des phénomènes inhabituels ou improbables à proximité d\'un enfant, résultant la plupart du temps à écarter un danger potentiel.<br><br>Si une instance de SCP-352-FR est trouvée suite à ces évènements, elle doit être récupérée sous couvert de rappel de produit. Un remplacement par une copie non-anormale peut être proposé aux parents concernés en cas de refus de leur part. Si cela s\'avère nécessaire, les agents sont autorisés à utiliser une dose légère d\'amnésiques de Classe A.',
         'SCP-352-FR désigne des peluches pour enfant possédant des propriétés anormales communes, de taille et de forme diverses. Aucun motif n\'a pu être observé parmi toutes celles récupérées.<br><br>Chaque instance renferme dans son garnissage un petit cube en verre coulé de 20 mm de côté aux bords arrondis, nommé SCP-352-FR-A. Ce cube renferme un peu de rembourrage de la peluche et un élément organique d\'origine humaine, le plus souvent quelques cheveux ou des fragments d\'ongles. Des analyses ADN effectuées sur trois instances différentes, détruites pour les besoins de l’analyse, ont montré que ces éléments viennent de l\'enfant à qui appartient SCP-352-FR, dorénavant nommé SCP-352-FR-B. Il est à noter que chaque instance de SCP-352-FR fait partie des peluches favorites des enfants concernés. Il est à l\'heure actuelle impossible d\'établir si cet effet est une autre caractéristique anormale de l\'objet ou si ces peluches sont choisies à dessein.<br><br>Quand SCP-352-FR-B tient son instance de SCP-352-FR dans ses bras, un effet de stabilisation de la réalité est généré par la peluche, produisant un effet similaire à celui provoqué par une Ancre à Réalité de Scranton. La portée de cet effet, déterminée par des mesures effectuées lors des différentes récupérations, est estimée à deux mètres. Son degré de Normalité1 renforcé est de 0,12 St2 et sa variation est d\'environ 0,08 St. Les tests et mesures ne pouvant être effectués que lors de la récupération des instances de SCP-352-FR3, il est actuellement impossible de vérifier si ces variations sont propres au fonctionnement de SCP-352-FR ou si les instances ont des facultés différentes.<br><br>Si SCP-352-FR-A est enlevé de sa peluche originale puis placé dans une autre peluche appartenant à SCP-352-FR-B, l\'effet disparaît complètement. Remettre SCP-352-FR-A dans sa peluche initiale permet à l\'effet de SCP-352-FR de se manifester à nouveau.<br>Si une autre personne tient SCP-352-FR, aucun effet n\'est constaté même en présence de SCP-352-FR-B dans la zone d\'effet supposé de l\'instance.',
         5,
-        NULL
+        -1
     ),
     (
         4,
@@ -168,33 +167,40 @@ VALUES
         17
     );
 
--- --------------------------------------------------------
+/*!40000 ALTER TABLE `scps` ENABLE KEYS */;
+
+UNLOCK TABLES;
+
 --
 -- Table structure for table `users`
 --
+DROP TABLE IF EXISTS `users`;
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+
+/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `users` (
-    `user_id` tinyint (4) NOT NULL COMMENT 'Identifiant unique de l''utilisateur',
+    `user_id` tinyint (4) NOT NULL AUTO_INCREMENT COMMENT 'Identifiant unique de l''utilisateur',
     `user_nick` varchar(32) NOT NULL COMMENT 'Pseudonyme de l''utilisateur',
     `user_gender` varchar(12) DEFAULT NULL COMMENT 'Genre de l''auteur',
     `user_loc` varchar(48) DEFAULT NULL,
     `user_bio` text DEFAULT NULL,
-    `user_pp` varchar(32) DEFAULT NULL,
-    `_scp_id` int(11) NOT NULL
-) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'Liste des utilisateurs';
+    `_scp_id` int(11) NOT NULL,
+    PRIMARY KEY (`user_id`)
+) ENGINE = MyISAM AUTO_INCREMENT = 20 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'Liste des utilisateurs';
+
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
 --
+LOCK TABLES `users` WRITE;
+
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
 INSERT INTO
-    `users` (
-        `user_id`,
-        `user_nick`,
-        `user_gender`,
-        `user_loc`,
-        `user_bio`,
-        `user_pp`,
-        `_scp_id`
-    )
+    `users`
 VALUES
     (
         1,
@@ -202,7 +208,6 @@ VALUES
         NULL,
         NULL,
         '<em class=\"italic\">The road was made to go from There to There. You were never meant to stop Here. Yet you tarried on this shoulder; Naught but decay and abandon, and above it the hungry-dark deep blue sky.</em>',
-        'snorlinson.avif',
         1
     ),
     (
@@ -211,7 +216,6 @@ VALUES
         'homme',
         'Dans la chambre de confinement de SCP-173',
         NULL,
-        'drheiteira.avif',
         2
     ),
     (
@@ -220,160 +224,56 @@ VALUES
         'homme',
         'Atlanta, GA',
         '<a href=\"https://twitter.com/djkaktus_\">https://twitter.com/djkaktus_</a>',
-        'djkaktus.avif',
         2
     ),
-    (
-        4,
-        'deBeauharnais',
-        NULL,
-        NULL,
-        NULL,
-        'debeauharnais.avif',
-        2
-    ),
-    (
-        5,
-        'Shkeil AkShek',
-        NULL,
-        NULL,
-        NULL,
-        'shkeil_akshek.avif',
-        3
-    ),
-    (
-        6,
-        'The Administrator',
-        NULL,
-        NULL,
-        NULL,
-        'administrator.avif',
-        4
-    ),
-    (
-        7,
-        'Dark Spy',
-        NULL,
-        NULL,
-        NULL,
-        'dark_spy.aviff',
-        4
-    ),
-    (
-        8,
-        'Salman Corbette',
-        NULL,
-        NULL,
-        NULL,
-        'salman.avif',
-        5
-    ),
-    (
-        9,
-        'D-2108',
-        'homme',
-        'Sa cellule.',
-        NULL,
-        'd2108.avif',
-        5
-    ),
-    (
-        10,
-        'DolphinSlugchugger',
-        NULL,
-        NULL,
-        NULL,
-        'dolphinslugchugger.avif',
-        6
-    ),
+    (4, 'deBeauharnais', NULL, NULL, NULL, 2),
+    (5, 'Shkeil AkShek', NULL, NULL, NULL, 3),
+    (6, 'The Administrator', NULL, NULL, NULL, 4),
+    (7, 'Dark Spy', NULL, NULL, NULL, 4),
+    (8, 'Salman Corbette', NULL, NULL, NULL, 5),
+    (9, 'D-2108', 'homme', 'Sa cellule.', NULL, 5),
+    (10, 'DolphinSlugchugger', NULL, NULL, NULL, 6),
     (
         11,
         'Dr Benji',
         'homme',
         'Bourg-en-Vol',
         'Benji, Benjo, Uncle Benj\', Grille-pain… Appelez moi comme vous voulez.',
-        'drbenji.avif',
         6
     ),
-    (
-        12,
-        'Dr Gears',
-        'homme',
-        NULL,
-        NULL,
-        'drgears.avif',
-        7
-    ),
-    (13, 'Fouin', NULL, NULL, NULL, 'fouin.avif', 7),
-    (
-        14,
-        'Yossipossi',
-        NULL,
-        NULL,
-        NULL,
-        'yossipossi.avif',
-        8
-    ),
-    (
-        15,
-        'Vaalxeny',
-        NULL,
-        NULL,
-        NULL,
-        'vaalxeny.avif',
-        8
-    ),
+    (12, 'Dr Gears', 'homme', NULL, NULL, 7),
+    (13, 'Fouin', NULL, NULL, NULL, 7),
+    (14, 'Yossipossi', NULL, NULL, NULL, 8),
+    (15, 'Vaalxeny', NULL, NULL, NULL, 8),
     (
         16,
         'floridapologia',
         NULL,
         NULL,
         'You don\'t need to tell me it sucks, I live here.',
-        'floridapolgia.avif',
         9
     ),
-    (
-        17,
-        'Pika Pika',
-        NULL,
-        NULL,
-        NULL,
-        'pika_2503.avif',
-        9
-    );
+    (17, 'Pika Pika', NULL, NULL, NULL, 9),
+    (18, 'none', NULL, NULL, NULL, 0);
 
---
--- Indexes for dumped tables
---
---
--- Indexes for table `scps`
---
-ALTER TABLE `scps` ADD PRIMARY KEY (`scp_id`);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
---
--- Indexes for table `users`
---
-ALTER TABLE `users` ADD PRIMARY KEY (`user_id`);
+UNLOCK TABLES;
 
---
--- AUTO_INCREMENT for dumped tables
---
---
--- AUTO_INCREMENT for table `scps`
---
-ALTER TABLE `scps` MODIFY `scp_id` tinyint (4) NOT NULL AUTO_INCREMENT COMMENT 'Identifiant unique de l''entité',
-AUTO_INCREMENT = 10;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users` MODIFY `user_id` tinyint (4) NOT NULL AUTO_INCREMENT COMMENT 'Identifiant unique de l''utilisateur',
-AUTO_INCREMENT = 18;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 
-COMMIT;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-03-28 11:56:04

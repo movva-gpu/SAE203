@@ -2,19 +2,17 @@
 require 'utils.module';
 require 'class/SCP.php';
 use class\SCP;
-error_reporting(E_ALL);
+
 importHeader('SCPs');
 
 $scp_db = include 'login.php';
 
 $req = 'SELECT scps.*,
     author.user_nick AS author_nick,
-    author.user_pp AS author_pp,
     author.user_bio AS author_bio,
     author.user_gender AS author_gender,
     author.user_loc AS author_loc,
     translator.user_nick AS translator_nick,
-    translator.user_pp AS translator_pp,
     translator.user_bio AS translator_bio,
     translator.user_gender AS translator_gender,
     translator.user_loc AS translator_loc

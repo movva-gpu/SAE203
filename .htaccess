@@ -1,6 +1,6 @@
 <Files ~ "admin\.php">
     AuthType Basic
     AuthName "Zone sécurisée"
-    AuthUserFile /var/www/html/htpassword.mmi
+    AuthUserFile /home/mmi23f13/htpassword.mmi
     Require valid-user
 </Files>

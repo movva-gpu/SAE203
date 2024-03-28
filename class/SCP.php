@@ -1,7 +1,10 @@
 <?php
 namespace class;
+
+
 class SCP
 {
+    private \PDO $scp_db;
     private int $id;
     private string $num;
     private string $name;
@@ -47,6 +50,7 @@ class SCP
         $this->desc = str_replace($search, $values, $desc);
         $this->author_id = $author_id;
         $this->translator_id = $translator_id;
+        $this->scp_db = include 'login.php';
     }
     public function getId(): int
     {
@@ -108,26 +112,31 @@ class SCP
             '</div>' .
             '<h2 class="title">' .
             $this->getNum() .
-            '&nbsp;
--&nbsp;
-' .
+            '&nbsp;-&nbsp;' .
             $this->getName() .
             '</h2>' .
-            '<p class="num"><span class="bold">Objet n°&nbsp;
-:</span> ' .
+            '<p class="num"><span class="bold">Objet n°&nbsp;:</span> ' .
             $this->getNum() .
             '</p>' .
-            '<p class="class"><span class="bold">Classe&nbsp;
-:</span> ' .
+            '<p class="class"><span class="bold">Classe&nbsp;:</span> ' .
             $this->getClass() .
             '</p>' .
-            '<p class="proc"><span class="bold">Procédures de confinement spéciales&nbsp;
-:</span> ' .
+            '<p class="proc"><span class="bold">Procédures de confinement spéciales&nbsp;:</span> ' .
             $this->getProc() .
             '</p>' .
-            '<p class="desc"><span class="bold">Description&nbsp;
-:</span> ' .
+            '<p class="desc"><span class="bold">Description&nbsp;:</span> ' .
             $this->getDesc() .
-            '</p>';
+            '</p>' .
+            '<div class="footer">' .
+            '<p class="author"><span class="bold">Auteur·ice&nbsp;:</span> ' .
+            ($this->scp_db->query('SELECT * FROM `users` WHERE `user_id` = ' . $this->getAuthorId())->fetch()['user_nick']) .
+            '</p>' .
+            '<p class="translator"><span class="bold">Traducteur·ice&nbsp;:</span> ' .
+            ($this->getTranslatorId() != -1 ? (
+            $this->scp_db->query('SELECT * FROM `users` WHERE `user_id` = ' . $this->getTranslatorId())->fetch()['user_nick']) :
+                'Pas de traducteur·ice.' ) .
+            '</p>' .
+            '<p class="link"><a title="Lien vers la publication originale" href="http://fondationscp.wikidot.com/' . strtolower($this->getNum()) . '" class="bold">Publication originale</a>' .
+            '</div>';
     }
 }

@@ -25,16 +25,15 @@
   "bugs": {
     "url": "https://github.com/movva-gpu/SAE203/issues"
   },
-  "homepage": "https://github.com/movva-gpu/SAE203#readme",
-  "dependencies": { "scrambling-text": "^1.2.0" },
+  "homepage": "https://mmi23f13.sae203.ovh",
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
-    "@cedx/php-minifier": "^2.0.0",
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
+    "@cedx/php-minifier": "^2.1.1",
     "@prettier/plugin-php": "^0.22.2",
     "@prettier/plugin-xml": "^3.3.1",
-    "autoprefixer": "^10.4.18",
-    "cssnano": "^6.1.0",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.1.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",

@@ -1,10 +1,10 @@
 <?php
 class Actions
 {
-    public const int EDIT = 1;
-    public const int DELETE = 2;
-    public const int CONFIRM_DELETION = 3;
-    public const int CREATE = 4;
+    public const EDIT = 1;
+    public const DELETE = 2;
+    public const CONFIRM_DELETION = 3;
+    public const CREATE = 4;
 }
 
 function importHeader($title = 'Titre vide')

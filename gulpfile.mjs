@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import uglifyEs from 'uglify-es';
 import gulp from 'gulp';
-import replace from 'gulp-replace';
 import header from 'gulp-header';
 
 import composer from 'gulp-uglify/composer.js';
@@ -49,14 +48,7 @@ task('minifyCSS', () => {
 
 task('minifyPHP', () => {
     return src(['**/*.php', '**/*.inc', '**/*.module', '!node_modules/**/*', '!vendor/**/*'])
-        .pipe(phpMinifier({ mode: 'safe', binary: '/mnt/c/php-8.3.2/php.exe', silent: false }))
-        .pipe(replace('    ', ''))
-        .pipe(replace('   ', ''))
-        .pipe(replace('  ', ''))
-        .pipe(replace(/[\r\n]/g, ''))
-        .pipe(replace('<?php', '<?php '))
-        .pipe(replace('<?=', '<?= '))
-        .pipe(replace('?>', ' ?>'))
+        .pipe(phpMinifier({ mode: 'safe', binary: 'C:\\php-8.3.2\\php.exe', silent: false }))
         .pipe(dest('build/'));
 });
 
@@ -92,9 +84,12 @@ task('copyImages', () => {
 task('copyFavicon', () => {
     return src('favicon.ico').pipe(dest('build/'));
 });
+task('copyHtaccess', () => {
+    return src('**/.htaccess').pipe(dest('build/'));
+});
 
 task('upload', cb => {
-    const command = 'sshpass -p ' + atob(conf.passwd) + ' scp -r build/* ' + conf.dest;
+    const command = 'pscp -r -pw ' + conf.passwd + ' build/* ' + conf.dest;
     exec(command, (error, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
@@ -106,7 +101,7 @@ task(
     'default',
     series(
         'cleanBuild',
-        parallel('minifyCSS', 'minifyJS', 'minifyPHP', 'copyImages', 'copyFavicon'),
+        parallel('minifyCSS', 'minifyJS', 'minifyPHP', 'copyImages', 'copyFavicon', 'copyHtaccess'),
         'upload'
     )
 );
