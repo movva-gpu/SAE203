@@ -1,3 +1,4 @@
+<?php global $title; ?>
 <footer>
     <p>
         <a
@@ -6,7 +7,7 @@
             href="https://linkedin.com/in/danyella-strikann"
             >Danyella Strikann</a
         >
-        &nbsp;©&nbsp;2024&nbsp;•&nbsp; Ce site est sous license
+        &nbsp;©&nbsp;2024&nbsp;•&nbsp;Ce site est sous license
         <a
             href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
             target="_blank"

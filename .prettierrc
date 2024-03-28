@@ -10,6 +10,8 @@ proseWrap: 'preserve'
 singleAttributePerLine: false
 bracketSameLine: true
 bracketSpacing: true
+editorconfig: true
+htmlWhitespaceSensitivity: css
 plugins:
   - '@prettier/plugin-php'
   - '@prettier/plugin-xml'

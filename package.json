@@ -26,7 +26,8 @@
     "url": "https://github.com/movva-gpu/SAE203/issues"
   },
   "homepage": "https://github.com/movva-gpu/SAE203#readme",
-  "dependencies": {
+  "dependencies": { "scrambling-text": "^1.2.0" },
+  "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
     "@cedx/php-minifier": "^2.0.0",
@@ -44,7 +45,7 @@
     "gulp-postcss": "^10.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-uglify": "^3.0.2",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.38",
     "postcss-nested": "^6.0.1",
     "prettier": "^3.2.5",
     "prettier-plugin-sql": "^0.18.0",

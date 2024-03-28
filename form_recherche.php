@@ -6,7 +6,7 @@ importHeader('Recherche');
 
 <main>
     <h1>Recherche</h1>
-    <form method="post" action="/reponse_recherche.php">
+    <form class="search" method="post" action="/reponse_recherche.php">
         <label for="author_name">Nom d'un&middot;e auteur&middot;ice / d'un&middot;e traducteur&middot;ice</label>
         <input type="text" name="author_name" id="author_name" required>
         <button class="btn back">Retour</button>

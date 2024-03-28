@@ -218,6 +218,10 @@ main {
             backdrop-filter: blur(2rem);
             border-radius: 3rem;
 
+            &.scp-905 .img {
+                background-position-y: top !important;
+            }
+
             .img-wrapper {
                 --_img-border: solid 0.1rem #000;
                 border: var(--_img-border, solid 1px #000);
@@ -225,10 +229,11 @@ main {
                 width: 100%;
                 box-shadow: 0 1px 10px #0006;
 
-                img {
+                .img {
                     border-radius: 0.9rem 0.9rem 0 0;
                     display: block;
-                    max-width: 100%;
+                    height: 333px;
+                    width: 100%;
                 }
 
                 legend {
@@ -249,7 +254,7 @@ main {
         }
     }
 
-    form {
+    form.search {
         display: grid;
         width: 50%;
         margin: 0 auto;
@@ -275,6 +280,114 @@ main {
             color: black;
         }
     }
+
+    #datatable_wrapper {
+        margin-top: 2rem;
+        .dt-search {
+            display: flex;
+            gap: 1rem;
+            width: fit-content;
+            margin: auto auto 2rem;
+            align-items: center;
+
+            input {
+                background-color: white;
+                border: none;
+                border-radius: 100vw;
+                color: black;
+                font-size: 1rem;
+                transition: 0.33s ease;
+                box-shadow: #0006 0 0;
+
+                &:hover {
+                    translate: -5px -5px;
+                    box-shadow: 5px 5px #0006;
+                }
+            }
+        }
+
+        table {
+            width: 80% !important;
+            margin: auto;
+            background-color: white;
+            border-radius: 2rem;
+
+            * {
+                color: black !important;
+            }
+
+            td {
+                img {
+                    max-width: 128px;
+                    padding: 0.1rem;
+                    height: unset;
+                }
+
+                p {
+                    display: inline-grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr;
+                    align-items: center;
+                    max-width: 25ch;
+                    height: 256px;
+                    overflow: clip auto;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+
+.admin-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min-content;
+    margin: auto;
+    gap: 1rem 2rem;
+
+    label {
+        place-self: center left;
+        min-width: 16ch;
+    }
+
+    label::after {
+        content: ' :';
+    }
+
+    input[disabled] {
+        cursor: not-allowed;
+    }
+
+    input,
+    textarea,
+    select,
+    option {
+        color: black;
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        font-size: 1rem;
+        line-height: calc(1rem * 1.5);
+        min-height: calc(1rem * 1.5);
+        padding: calc(1rem / 4) calc(1rem / 2);
+        border: none;
+        border-radius: 1rem;
+    }
+
+    textarea {
+        width: max-content;
+        resize: none;
+        scrollbar-width: thin;
+        scrollbar-color: gray transparent;
+    }
+
+    button {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        height: unset;
+        width: 100%;
+    }
 }
 
 button {
@@ -285,11 +398,20 @@ button {
     font-size: 1rem;
     background-color: white;
     border: solid #666 1px;
-    border-radius: 0.5rem;
+    border-radius: 100vw;
     transition:
         box-shadow ease 0.33s,
         translate ease 0.33s;
     color: black;
+
+    &.add {
+        margin-top: 1rem !important;
+    }
+
+    &.scp,
+    &.user {
+        margin-block: 2rem !important;
+    }
 
     &:hover {
         translate: -5px -5px;
@@ -352,7 +474,7 @@ footer {
         }
     }
 
-    form {
+    form.search {
         display: block !important;
         width: calc(100% - 2rem * 2) !important;
         margin: 0 2rem !important;

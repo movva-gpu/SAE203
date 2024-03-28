@@ -1,7 +1,14 @@
 <?php
+class Actions
+{
+    public const int EDIT = 1;
+    public const int DELETE = 2;
+    public const int CONFIRM_DELETION = 3;
+    public const int CREATE = 4;
+}
+
 function importHeader($title = 'Titre vide')
 {
-    require 'components/head.inc';
-    echo '<title>' . $title . '</title>';
-    require 'components/header.inc';
+    require_once 'components/head.inc';
+    require_once 'components/header.inc';
 }

@@ -53,7 +53,7 @@ task('minifyPHP', () => {
         .pipe(replace('    ', ''))
         .pipe(replace('   ', ''))
         .pipe(replace('  ', ''))
-        .pipe(replace(/\r|\n/g, ''))
+        .pipe(replace(/[\r\n]/g, ''))
         .pipe(replace('<?php', '<?php '))
         .pipe(replace('<?=', '<?= '))
         .pipe(replace('?>', ' ?>'))
